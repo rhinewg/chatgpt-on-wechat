@@ -64,6 +64,10 @@ def create_bot(bot_type):
         from bot.zhipuai.zhipuai_bot import ZHIPUAIBot
         return ZHIPUAIBot()
 
+    elif bot_type == const.COZE:
+        from bot.bytedance.bytedance_coze_bot import ByteDanceCozeBot
+        return ByteDanceCozeBot()
+
     elif bot_type == const.MOONSHOT:
         from bot.moonshot.moonshot_bot import MoonshotBot
         return MoonshotBot()
@@ -71,9 +75,6 @@ def create_bot(bot_type):
     elif bot_type == const.MiniMax:
         from bot.minimax.minimax_bot import MinimaxBot
         return MinimaxBot()
-    elif bot_type == const.COZE:
-        from bot.bytedance.bytedance_coze_bot import ByteDanceCozeBot
-        return ByteDanceCozeBot()
 
 
     raise RuntimeError
